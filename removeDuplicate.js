@@ -2,37 +2,71 @@
 //remove duplicate from string
 
 
-const removeDuplicate = (S) => {
+// const removeDuplicate = (S) => {
   
-   const newString  = S.split("");
-   const removeDuplicate=  [...new Set(newString)]
-   return removeDuplicate.join("");
-}
-console.log(removeDuplicate("aaaaabbbbbb"));
+//    const newString  = S.split("");
+//    const removeDuplicate=  [...new Set(newString)]
+//    return removeDuplicate.join("");
+// }
+// console.log(removeDuplicate("aaaaabbbbbb"));
 
 
-//Diagonal Difference 
+// //Diagonal Difference 
 
 // function diagonalDifference(arr) {
-//     var n = arr.length; 
-//     var d1 = 0;
-//     var d2 = 0;
-//   for(var i=0; i<n; i++){
-//      for(var j=0; j<n; j++){
-//        // finding the sum of primary diagonal
-//          if(i === j) {
-//            d1 += arr[i][j];
-//          }
-//        // finding the sum of secondary diagonal
-//          if(i + j === n - 1){
-//             d2 += arr[i][j];
-//          }
+  
+//     let n = arr.length; 
+//     console.log(n)
+//     let d1 = 0;
+//     let d2 = 0;
+//   for(let i=0; i<n; i++){
+//            d1 += arr[i][i];
+
+//             d2 += arr[i][n-1-i];
+         
 //       }
-//   }
-//   return d1 - d2;
+  
+//   return Math.abs(d1 - d2);
 // }
 
-// diagonalDifference( [[2,1,4],[5,1,2],[3,1,9]])
+//  console.log(diagonalDifference( [[1,2,3],[4,5,6],[9,8,9]]))
+
+ //cipher
+
+ function ceaserCipher(str,num){
+   num=num%26;
+   console.log(num,"jhj");
+   str=str.toLowerCase();
+
+
+
+   const alphabet ='abcdefghijklmnopqrstuvwxyz';
+   const rotatedAlphabet =alphabet.slice(num)+alphabet.slice(0,num);
+console.log(rotatedAlphabet);
+
+   let result='';
+     
+
+   for(let i=0;i<str.lenght;i++){
+      const currentChar=str[i];
+      let newChar = currentChar;
+
+
+      if(alphabet.includes(currentChar)){
+         const index=alphabet.indexOf(currentChar);
+         console.log(index,"res");
+         newChar=rotatedAlphabet[index];
+         console.log(newChar,"res");
+      }
+result +=newChar
+console.log(result,"res");
+   }
+return result
+ }
+const input="There’s-a-starman";
+const output=ceaserCipher(input,3);
+console.log(output);
+
 
 
 

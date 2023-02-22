@@ -32,7 +32,6 @@
 
 function ceaserCipher(str, num) {
   num = num % 26;
-  console.log(num, "jhj");
   str = str.toLowerCase();
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -55,3 +54,4 @@ function ceaserCipher(str, num) {
 }
 const input = "There’s-a-starman";
 const output = ceaserCipher(input, 3);
+
